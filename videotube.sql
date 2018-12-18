@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 17, 2018 at 09:35 PM
+-- Generation Time: Dec 18, 2018 at 11:02 PM
 -- Server version: 10.1.32-MariaDB
 -- PHP Version: 7.2.5
 
@@ -79,6 +79,30 @@ INSERT INTO `thumbnails` (`id`, `videoId`, `filePath`, `selected`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
+  `firstName` varchar(25) NOT NULL,
+  `lastName` varchar(25) NOT NULL,
+  `username` varchar(25) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `signUpDate` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `profilePic` varchar(250) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `firstName`, `lastName`, `username`, `email`, `password`, `signUpDate`, `profilePic`) VALUES
+(1, 'Kujtim', 'Prenku', 'kujtim', 'kujtim@prenku.com', '$2y$12$w6TXZhH0D6mKExMTktr0buhyrnL7I40q1rXulMIl5skru0Bql3JNa', '2018-12-18 21:56:53', 'assets/images/profilePictures/default.png');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `videos`
 --
 
@@ -119,6 +143,12 @@ ALTER TABLE `thumbnails`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `videos`
 --
 ALTER TABLE `videos`
@@ -139,6 +169,12 @@ ALTER TABLE `categories`
 --
 ALTER TABLE `thumbnails`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `videos`
