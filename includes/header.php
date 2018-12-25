@@ -1,4 +1,13 @@
-<?php require_once("includes/config.php"); ?>
+<?php 
+
+    require_once("includes/config.php");
+    require_once("includes/classes/User.php");
+    require_once("includes/classes/Video.php");
+
+    $usernameLoggedIn = User::isLoggedIn() ? $_SESSION["userLoggedin"] : "";
+    $userLoggedInObj = new User($con, $usernameLoggedIn);
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

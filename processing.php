@@ -14,7 +14,7 @@
         $_POST["descriptionInput"],
         $_POST["privacyInput"],
         $_POST["categoryInput"],
-        "REPLACE-THIS" );
+        $userLoggedInObj->getUsername());
     
     $videoProcessor = new VideoProcessor($con);
     $wasSuccessful = $videoProcessor->upload($videoUploadData);
