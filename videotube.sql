@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 04, 2019 at 02:22 PM
+-- Generation Time: Jan 28, 2019 at 10:31 AM
 -- Server version: 10.1.32-MariaDB
 -- PHP Version: 7.2.5
 
@@ -57,6 +57,30 @@ INSERT INTO `categories` (`id`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `comments`
+--
+
+CREATE TABLE `comments` (
+  `id` int(11) NOT NULL,
+  `postedBy` varchar(50) NOT NULL,
+  `videoId` int(11) NOT NULL,
+  `responseTo` int(11) NOT NULL,
+  `body` text NOT NULL,
+  `datePosted` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `comments`
+--
+
+INSERT INTO `comments` (`id`, `postedBy`, `videoId`, `responseTo`, `body`, `datePosted`) VALUES
+(1, 'kujtim', 6, 0, 'Hi Everyone', '2019-01-10 20:38:09'),
+(2, 'kujtim', 6, 0, 'Nice video', '2019-01-10 21:11:38'),
+(29, 'kujtim', 7, 0, 'Great video fitim :)', '2019-01-28 10:24:21');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `dislikes`
 --
 
@@ -79,13 +103,6 @@ CREATE TABLE `likes` (
   `commentId` int(11) NOT NULL,
   `videoId` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `likes`
---
-
-INSERT INTO `likes` (`id`, `username`, `commentId`, `videoId`) VALUES
-(18, 'kujtim', 0, 6);
 
 -- --------------------------------------------------------
 
@@ -124,12 +141,12 @@ CREATE TABLE `thumbnails` (
 --
 
 INSERT INTO `thumbnails` (`id`, `videoId`, `filePath`, `selected`) VALUES
-(16, 6, 'uploads/videos/5c18086321adc.mp4', 1),
-(17, 6, 'uploads/videos/5c18086321adc.mp4', 0),
-(18, 6, 'uploads/videos/5c18086321adc.mp4', 0),
-(19, 7, 'uploads/videos/5c275a4928ab5.mp4', 1),
-(20, 7, 'uploads/videos/5c275a4928ab5.mp4', 0),
-(21, 7, 'uploads/videos/5c275a4928ab5.mp4', 0);
+(16, 6, 'uploads/videos/thumbnails/8-5c4a1fc27009d.jpg', 1),
+(17, 6, 'uploads/videos/thumbnails/8-5c4a1fc27009d.jpg', 0),
+(18, 6, 'uploads/videos/thumbnails/8-5c4a1fc27009d.jpg', 0),
+(19, 7, 'uploads/videos/thumbnails/8-5c4a1fc27009d.jpg', 1),
+(20, 7, 'uploads/videos/thumbnails/8-5c4a1fc27009d.jpg', 0),
+(21, 7, 'uploads/videos/thumbnails/8-5c4a1fc27009d.jpg', 0);
 
 -- --------------------------------------------------------
 
@@ -180,8 +197,8 @@ CREATE TABLE `videos` (
 --
 
 INSERT INTO `videos` (`id`, `uploadedBy`, `title`, `description`, `privacy`, `filePath`, `category`, `uploadDate`, `views`, `duration`) VALUES
-(6, 'kujtim', 'Bars and Tone', 'Bars and Tone Description', 1, 'uploads/videos/5c18086321adc.mp4', 3, '2018-12-17 21:34:43', 121, '00:06'),
-(7, 'fitim', 'Bars and Tone F', 'Bars and Tone F', 0, 'uploads/videos/5c275a4928ab5.mp4', 1, '2018-12-29 12:28:09', 18, '00:06');
+(6, 'kujtim', 'Bars and Tone', 'Bars and Tone Description', 1, 'uploads/videos/5c18086321adc.mp4', 3, '2018-12-17 21:34:43', 241, '00:06'),
+(7, 'fitim', 'Bars and Tone F', 'Bars and Tone F', 0, 'uploads/videos/5c275a4928ab5.mp4', 1, '2018-12-29 12:28:09', 25, '00:06');
 
 --
 -- Indexes for dumped tables
@@ -191,6 +208,12 @@ INSERT INTO `videos` (`id`, `uploadedBy`, `title`, `description`, `privacy`, `fi
 -- Indexes for table `categories`
 --
 ALTER TABLE `categories`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `comments`
+--
+ALTER TABLE `comments`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -240,16 +263,22 @@ ALTER TABLE `categories`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
+-- AUTO_INCREMENT for table `comments`
+--
+ALTER TABLE `comments`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+
+--
 -- AUTO_INCREMENT for table `dislikes`
 --
 ALTER TABLE `dislikes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `likes`
 --
 ALTER TABLE `likes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `subscribers`
@@ -261,7 +290,7 @@ ALTER TABLE `subscribers`
 -- AUTO_INCREMENT for table `thumbnails`
 --
 ALTER TABLE `thumbnails`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `users`
@@ -273,7 +302,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `videos`
 --
 ALTER TABLE `videos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
