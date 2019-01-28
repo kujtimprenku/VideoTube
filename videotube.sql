@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 28, 2019 at 10:31 AM
+-- Generation Time: Jan 28, 2019 at 03:34 PM
 -- Server version: 10.1.32-MariaDB
 -- PHP Version: 7.2.5
 
@@ -141,12 +141,12 @@ CREATE TABLE `thumbnails` (
 --
 
 INSERT INTO `thumbnails` (`id`, `videoId`, `filePath`, `selected`) VALUES
-(16, 6, 'uploads/videos/thumbnails/8-5c4a1fc27009d.jpg', 1),
-(17, 6, 'uploads/videos/thumbnails/8-5c4a1fc27009d.jpg', 0),
-(18, 6, 'uploads/videos/thumbnails/8-5c4a1fc27009d.jpg', 0),
-(19, 7, 'uploads/videos/thumbnails/8-5c4a1fc27009d.jpg', 1),
-(20, 7, 'uploads/videos/thumbnails/8-5c4a1fc27009d.jpg', 0),
-(21, 7, 'uploads/videos/thumbnails/8-5c4a1fc27009d.jpg', 0);
+(16, 6, 'uploads/videos/thumbnails/6-5c180866c1c6e.jpg', 1),
+(17, 6, 'uploads/videos/thumbnails/6-5c180866c1c6e.jpg', 0),
+(18, 6, 'uploads/videos/thumbnails/6-5c180866c1c6e.jpg', 0),
+(19, 7, 'uploads/videos/thumbnails/6-5c180866c1c6e.jpg', 1),
+(20, 7, 'uploads/videos/thumbnails/6-5c180866c1c6e.jpg', 0),
+(21, 7, 'uploads/videos/thumbnails/6-5c180866c1c6e.jpg', 0);
 
 -- --------------------------------------------------------
 
@@ -272,13 +272,13 @@ ALTER TABLE `comments`
 -- AUTO_INCREMENT for table `dislikes`
 --
 ALTER TABLE `dislikes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `likes`
 --
 ALTER TABLE `likes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `subscribers`
@@ -290,7 +290,7 @@ ALTER TABLE `subscribers`
 -- AUTO_INCREMENT for table `thumbnails`
 --
 ALTER TABLE `thumbnails`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `users`
@@ -302,7 +302,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `videos`
 --
 ALTER TABLE `videos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
