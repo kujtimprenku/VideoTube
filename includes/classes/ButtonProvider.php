@@ -72,6 +72,16 @@ class ButtonProvider {
                     $button
                 </div>";
     }
+
+    public function createUserProfileNavigationButton($con, $username){
+        if(User::isLoggedIn()){
+            return ButtonProvider::createUserProfileButton($con, $username);
+        }else {
+            return "<a href='signin.php'>
+                        <span class='signInLink'>SIGN IN</span>
+                    </a>";
+        }
+    }
 }
 
 ?>

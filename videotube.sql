@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 28, 2019 at 03:34 PM
+-- Generation Time: Jan 29, 2019 at 12:24 PM
 -- Server version: 10.1.32-MariaDB
 -- PHP Version: 7.2.5
 
@@ -104,6 +104,14 @@ CREATE TABLE `likes` (
   `videoId` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `likes`
+--
+
+INSERT INTO `likes` (`id`, `username`, `commentId`, `videoId`) VALUES
+(2, 'kujtim', 0, 6),
+(3, 'kujtim', 0, 7);
+
 -- --------------------------------------------------------
 
 --
@@ -146,7 +154,10 @@ INSERT INTO `thumbnails` (`id`, `videoId`, `filePath`, `selected`) VALUES
 (18, 6, 'uploads/videos/thumbnails/6-5c180866c1c6e.jpg', 0),
 (19, 7, 'uploads/videos/thumbnails/6-5c180866c1c6e.jpg', 1),
 (20, 7, 'uploads/videos/thumbnails/6-5c180866c1c6e.jpg', 0),
-(21, 7, 'uploads/videos/thumbnails/6-5c180866c1c6e.jpg', 0);
+(21, 7, 'uploads/videos/thumbnails/6-5c180866c1c6e.jpg', 0),
+(22, 8, 'uploads/videos/thumbnails/8-5c5030a00c358.jpg', 1),
+(23, 8, 'uploads/videos/thumbnails/8-5c5030a0740f2.jpg', 0),
+(24, 8, 'uploads/videos/thumbnails/8-5c5030a0daf6d.jpg', 0);
 
 -- --------------------------------------------------------
 
@@ -197,8 +208,9 @@ CREATE TABLE `videos` (
 --
 
 INSERT INTO `videos` (`id`, `uploadedBy`, `title`, `description`, `privacy`, `filePath`, `category`, `uploadDate`, `views`, `duration`) VALUES
-(6, 'kujtim', 'Bars and Tone', 'Bars and Tone Description', 1, 'uploads/videos/5c18086321adc.mp4', 3, '2018-12-17 21:34:43', 241, '00:06'),
-(7, 'fitim', 'Bars and Tone F', 'Bars and Tone F', 0, 'uploads/videos/5c275a4928ab5.mp4', 1, '2018-12-29 12:28:09', 25, '00:06');
+(6, 'kujtim', 'Bars and Tone', 'Bars and Tone Description', 1, 'uploads/videos/5c18086321adc.mp4', 3, '2018-12-17 21:34:43', 243, '00:06'),
+(7, 'fitim', 'Bars and Tone F', 'Bars and Tone F', 0, 'uploads/videos/5c275a4928ab5.mp4', 1, '2018-12-29 12:28:09', 30, '00:06'),
+(8, 'kujtim', 'This video should be trending', 'This is the description of a trending video.', 0, 'uploads/videos/5c50309993979.mp4', 1, '2019-01-29 11:53:13', 0, '00:06');
 
 --
 -- Indexes for dumped tables
@@ -278,7 +290,7 @@ ALTER TABLE `dislikes`
 -- AUTO_INCREMENT for table `likes`
 --
 ALTER TABLE `likes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `subscribers`
@@ -290,7 +302,7 @@ ALTER TABLE `subscribers`
 -- AUTO_INCREMENT for table `thumbnails`
 --
 ALTER TABLE `thumbnails`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `users`
@@ -302,7 +314,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `videos`
 --
 ALTER TABLE `videos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
