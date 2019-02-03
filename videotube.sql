@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 29, 2019 at 12:24 PM
+-- Generation Time: Feb 03, 2019 at 10:46 PM
 -- Server version: 10.1.32-MariaDB
 -- PHP Version: 7.2.5
 
@@ -129,7 +129,8 @@ CREATE TABLE `subscribers` (
 --
 
 INSERT INTO `subscribers` (`id`, `userTo`, `userFrom`) VALUES
-(3, 'fitim', 'kujtim');
+(6, 'fitim', 'kujtim'),
+(7, 'kujtim', 'fitim');
 
 -- --------------------------------------------------------
 
@@ -152,12 +153,21 @@ INSERT INTO `thumbnails` (`id`, `videoId`, `filePath`, `selected`) VALUES
 (16, 6, 'uploads/videos/thumbnails/6-5c180866c1c6e.jpg', 1),
 (17, 6, 'uploads/videos/thumbnails/6-5c180866c1c6e.jpg', 0),
 (18, 6, 'uploads/videos/thumbnails/6-5c180866c1c6e.jpg', 0),
-(19, 7, 'uploads/videos/thumbnails/6-5c180866c1c6e.jpg', 1),
-(20, 7, 'uploads/videos/thumbnails/6-5c180866c1c6e.jpg', 0),
-(21, 7, 'uploads/videos/thumbnails/6-5c180866c1c6e.jpg', 0),
 (22, 8, 'uploads/videos/thumbnails/8-5c5030a00c358.jpg', 1),
 (23, 8, 'uploads/videos/thumbnails/8-5c5030a0740f2.jpg', 0),
-(24, 8, 'uploads/videos/thumbnails/8-5c5030a0daf6d.jpg', 0);
+(24, 8, 'uploads/videos/thumbnails/8-5c5030a0daf6d.jpg', 0),
+(25, 9, 'uploads/videos/thumbnails/9-5c575c3d8280a.jpg', 1),
+(26, 9, 'uploads/videos/thumbnails/9-5c575c3ec6e22.jpg', 0),
+(27, 9, 'uploads/videos/thumbnails/9-5c575c404f20b.jpg', 0),
+(28, 10, 'uploads/videos/thumbnails/10-5c575cf1dfe98.jpg', 1),
+(29, 10, 'uploads/videos/thumbnails/10-5c575cf2bd411.jpg', 0),
+(30, 10, 'uploads/videos/thumbnails/10-5c575cf441068.jpg', 0),
+(31, 11, 'uploads/videos/thumbnails/11-5c575eb1dbbdc.jpg', 1),
+(32, 11, 'uploads/videos/thumbnails/11-5c575eb2e8eed.jpg', 0),
+(33, 11, 'uploads/videos/thumbnails/11-5c575eb4d304c.jpg', 0),
+(34, 12, 'uploads/videos/thumbnails/12-5c575f1fdffb0.jpg', 1),
+(35, 12, 'uploads/videos/thumbnails/12-5c575f209d6c8.jpg', 0),
+(36, 12, 'uploads/videos/thumbnails/12-5c575f220ccba.jpg', 0);
 
 -- --------------------------------------------------------
 
@@ -181,8 +191,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `firstName`, `lastName`, `username`, `email`, `password`, `signUpDate`, `profilePic`) VALUES
-(1, 'Kujtim', 'Prenku', 'kujtim', 'kujtim@prenku.com', '$2y$12$w6TXZhH0D6mKExMTktr0buhyrnL7I40q1rXulMIl5skru0Bql3JNa', '2018-12-18 21:56:53', 'assets/images/profilePictures/default.png'),
-(2, 'Fitim', 'Prenku', 'fitim', 'fitim@fitim.com', '$2y$12$oFxzy8T1XHmeynANV8au8usFvGDSCa5M4yJaGW8bJJCZwfdBmjjji', '2018-12-29 12:27:35', 'assets/images/profilePictures/default.png');
+(1, 'Kujtim', 'Prenku', 'kujtim', 'Kujtim@prenku.com', '$2y$12$ouVEWUCWT1Xu/3uYJCl69.a.6Mih2BVCj5yXC6gTcBn/ifvlP.5XO', '2018-12-18 21:56:53', 'assets/images/profilePictures/default-male.png'),
+(2, 'Fitim', 'Prenku', 'fitim', 'fitim@fitim.com', '$2y$12$oFxzy8T1XHmeynANV8au8usFvGDSCa5M4yJaGW8bJJCZwfdBmjjji', '2018-12-29 12:27:35', 'assets/images/profilePictures/default-male.png');
 
 -- --------------------------------------------------------
 
@@ -208,9 +218,12 @@ CREATE TABLE `videos` (
 --
 
 INSERT INTO `videos` (`id`, `uploadedBy`, `title`, `description`, `privacy`, `filePath`, `category`, `uploadDate`, `views`, `duration`) VALUES
-(6, 'kujtim', 'Bars and Tone', 'Bars and Tone Description', 1, 'uploads/videos/5c18086321adc.mp4', 3, '2018-12-17 21:34:43', 243, '00:06'),
-(7, 'fitim', 'Bars and Tone F', 'Bars and Tone F', 0, 'uploads/videos/5c275a4928ab5.mp4', 1, '2018-12-29 12:28:09', 30, '00:06'),
-(8, 'kujtim', 'This video should be trending', 'This is the description of a trending video.', 0, 'uploads/videos/5c50309993979.mp4', 1, '2019-01-29 11:53:13', 0, '00:06');
+(6, 'kujtim', 'Bars and Tone', 'Bars and Tone Description \r\n                     \r\n                     \r\n                     \r\n                     \r\n                    ', 0, 'uploads/videos/5c18086321adc.mp4', 11, '2018-12-17 21:34:43', 245, '00:06'),
+(8, 'kujtim', 'This video should be trending.', 'This is the description of a trending video. \r\n                    ', 0, 'uploads/videos/5c50309993979.mp4', 1, '2019-01-29 11:53:13', 9, '00:06'),
+(9, 'kujtim', 'Robin Sharma and Desmond Tutu meeting', ' This is the description of Robin Sharma and Desmond Tutu meeting\r\n                    ', 0, 'uploads/videos/5c575c32314ad.mp4', 13, '2019-02-03 22:25:06', 2, '00:16'),
+(10, 'kujtim', 'Lead where youâ€™re planted. ', ' This is the description of Lead where youâ€™re planted video. \r\n                    ', 1, 'uploads/videos/5c575cd344093.mp4', 13, '2019-02-03 22:27:47', 1, '00:50'),
+(11, 'fitim', 'Grow intimacy with your natural magic and youâ€™ll produce magic in yo', ' Description of Grow intimacy with your natural magic and youâ€™ll produce magic in your domain.\r\n                    ', 1, 'uploads/videos/5c575e8e78030.mp4', 13, '2019-02-03 22:35:10', 4, '00:59'),
+(12, 'fitim', 'An interesting insight on the blessings you posses.', 'Description of An interesting insight on the blessings you posses.', 1, 'uploads/videos/5c575f02e60bf.mp4', 6, '2019-02-03 22:37:06', 1, '00:31');
 
 --
 -- Indexes for dumped tables
@@ -296,13 +309,13 @@ ALTER TABLE `likes`
 -- AUTO_INCREMENT for table `subscribers`
 --
 ALTER TABLE `subscribers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `thumbnails`
 --
 ALTER TABLE `thumbnails`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT for table `users`
@@ -314,7 +327,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `videos`
 --
 ALTER TABLE `videos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
