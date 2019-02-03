@@ -1,3 +1,2 @@
-YouTube Clone
+This is a youtube clone created by following a udemy course.
 
-This is a website created by following an Udemy course.
